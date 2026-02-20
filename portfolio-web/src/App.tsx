@@ -21,7 +21,7 @@ export function Profile() {
         alt="Developer's profile picture"
         className="profile-img"
       />
-      <h1>{person.name}</h1>
+      <h1 className="text-3xl font-bold text-gray-500">{person.name}</h1>
       <p>{`<${formattedName} />`}</p>
     </>
   );
