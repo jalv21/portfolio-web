@@ -1,13 +1,13 @@
 import React from 'react';
 
 let languages = [
-  { name: 'Portuguese', acronym: 'PT-BR', iconPath: '' }, 
-  { name: 'English', acronym: 'EN', iconPath: '' }
+  { name: 'Portuguese', acronym: 'PT-BR', iconPath: './public/brazil-flag.png' },
+  { name: 'English', acronym: 'EN', iconPath: './public/usa-flag.png' }
 ];
 
 export default function PageLayout() {
   return (
-    <section className="flex flex-col align-items-center justify-center h-screen">
+    <section className="bg-black flex flex-col align-items-center justify-center h-screen">
       <LanguageMenu>
         {languages.map((language) => (<LanguageButton language={language} />))}
       </LanguageMenu>
@@ -22,7 +22,7 @@ export default function PageLayout() {
 
 export function LanguageMenu({ children }: { children: React.ReactNode }) {
   return (
-    <div className="flex justify-center">
+    <div className="flex justify-center gap-2">
       {children}
     </div>
   );
@@ -30,7 +30,7 @@ export function LanguageMenu({ children }: { children: React.ReactNode }) {
 
 export function LanguageButton({ language }: { language: any }) {
   return (
-    <button className="flex items-center justify-center m-2">
+    <button className="bg-neutral-400 text-white font-bold font-mono flex items-center justify-center gap-2 px-4 py-2 rounded-full shadow shadow-neutral-600">
       <img src={language.iconPath} alt={`${language.name} language icon`} className="mr-2" />
       {language.acronym}
     </button>
@@ -38,7 +38,11 @@ export function LanguageButton({ language }: { language: any }) {
 }
 
 export function Profile({ children }: { children: React.ReactNode }) {
-  return <>{children}</>;
+  return (
+    <>
+      {children}
+    </>
+  );
 }
 
 export function ProfilePicture() {
