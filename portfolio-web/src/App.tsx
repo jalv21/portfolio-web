@@ -1,18 +1,9 @@
-const person = {
-  name: 'João Alvaro Rodrigues',
-  occupation: 'Software Engineer',
-  profilePicture: ''
-};
+import LandingPage from './components/LandingPage';
 
-function App() {
+export default function App() {
   return (
     <>
-      
+      <LandingPage />
     </>
   );
 }
-
-
-
-
-export default App;
