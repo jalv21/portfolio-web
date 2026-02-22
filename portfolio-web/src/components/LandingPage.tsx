@@ -64,6 +64,11 @@ export function ProfileHeading() {
 
 export function MainMenu() {
   return (
-    <></>
+    <ul className="flex justify-between items-center gap-10 text-white font-mono text-2xl">
+      <li>SOBRE MIM</li>
+      <li>PROJETOS</li>
+      <li>EXPERIENCIAS</li>
+      <li>CONTATO</li>
+    </ul>
   );
 }
