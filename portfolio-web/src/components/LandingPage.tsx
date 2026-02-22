@@ -30,7 +30,7 @@ export function LanguageMenu({ children }: { children: React.ReactNode }) {
 
 export function LanguageButton({ language }: { language: any }) {
   return (
-    <button className="bg-neutral-400 text-white font-bold font-mono flex items-center justify-center gap-2 px-4 py-2 rounded-full shadow-lg shadow-neutral-500">
+    <button className="bg-neutral-500 text-white font-bold font-mono flex items-center justify-center gap-2 px-4 py-2 rounded-full shadow-lg shadow-neutral-400">
       <img src={language.iconPath} alt={`${language.name} language icon`} className="mr-2" />
       {language.acronym}
     </button>
@@ -64,7 +64,7 @@ export function ProfileHeading() {
 
 export function MainMenu() {
   return (
-    <ul className="flex justify-between items-center gap-10 text-white font-mono text-2xl">
+    <ul className="flex flex-col justify-between items-center gap-4 md:gap-10 md:flex-row text-white font-mono text-2xl">
       <li>SOBRE MIM</li>
       <li>PROJETOS</li>
       <li>EXPERIENCIAS</li>
