@@ -7,7 +7,7 @@ const languages = [
 
 export default function PageLayout() {
   return (
-    <section className="bg-black flex flex-col items-center justify-around gap-2 h-screen">
+    <section className="bg-black flex flex-col items-center justify-around gap-2 h-screen font-jetbrains">
       <LanguageMenu>
         {languages.map((language) => (<LanguageButton language={language} />))}
       </LanguageMenu>
@@ -30,7 +30,7 @@ export function LanguageMenu({ children }: { children: React.ReactNode }) {
 
 export function LanguageButton({ language }: { language: any }) {
   return (
-    <button className="bg-neutral-500 text-white font-bold font-mono flex items-center justify-center gap-2 px-4 py-2 rounded-full shadow-lg shadow-neutral-400">
+    <button className="bg-neutral-500 text-white font-display flex items-center justify-center gap-2 px-4 py-2 rounded-full shadow-lg shadow-neutral-400">
       <img src={language.iconPath} alt={`${language.name} language icon`} className="mr-2" />
       {language.acronym}
     </button>
@@ -55,8 +55,8 @@ export function ProfilePicture() {
 
 export function ProfileHeading() {
   return (
-    <div className="flex flex-col justify-center items-center gap-2 font-mono font-bold m-4 text-center">
-      <h1 className="text-5xl text-white">João Alvaro Rodrigues</h1>
+    <div className="flex flex-col justify-center items-center gap-2 m-4 text-center">
+      <h1 className="text-5xl font-bold text-white">João Alvaro Rodrigues</h1>
       <p className="text-2xl text-white">{'<'}<span className="text-green-200">SoftwareEngineer</span>{' />'}</p>
     </div>
   );
@@ -64,7 +64,7 @@ export function ProfileHeading() {
 
 export function MainMenu() {
   return (
-    <ul className="flex flex-col justify-between items-center gap-4 md:gap-10 md:flex-row text-white font-mono text-2xl">
+    <ul className="flex flex-col justify-between items-center gap-4 md:gap-10 md:flex-row text-white text-2xl">
       <li>SOBRE MIM</li>
       <li>PROJETOS</li>
       <li>EXPERIENCIAS</li>
