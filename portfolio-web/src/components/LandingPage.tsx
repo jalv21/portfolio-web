@@ -1,7 +1,7 @@
 import React from 'react';
 
 const languages = [
-  { name: 'Portuguese', acronym: 'PT-BR', iconPath: './public/brazil-flag.png' },
+  { name: 'Português', acronym: 'PT-BR', iconPath: './public/brazil-flag.png' },
   { name: 'English', acronym: 'EN', iconPath: './public/usa-flag.png' }
 ];
 
@@ -29,8 +29,16 @@ export function LanguageMenu({ children }: { children: React.ReactNode }) {
 }
 
 export function LanguageButton({ language }: { language: any }) {
+  const buttonActiveClass = "bg-neutral-400 shadow-neutral-300";
+  const buttonHoverClass = "hover:cursor-pointer hover:bg-neutral-400 hover:shadow-neutral-300 transition-all duration-300";
+
   return (
-    <button className="bg-neutral-500 text-white font-display flex items-center justify-center gap-2 px-4 py-2 rounded-full shadow-lg shadow-neutral-400">
+    <button 
+      className={`${buttonHoverClass} bg-neutral-500 text-white font-display flex items-center justify-center gap-2 px-4 py-2 rounded-full shadow-lg shadow-neutral-400`}
+      onClick={() => {
+        alert(language.name);
+      }}
+    >
       <img src={language.iconPath} alt={`${language.name} language icon`} className="mr-2" />
       {language.acronym}
     </button>
@@ -63,12 +71,12 @@ export function ProfileHeading() {
 }
 
 export function MainMenu() {
+  const menuItems = ['SOBRE MIM', 'PROJETOS', 'EXPERIENCIAS', 'CONTATO'];
+  const listItemHoverClass = "cursor-pointer hover:text-green-200 hover:text-shadow-md hover:text-shadow-green-800 transition-all duration-400";
+
   return (
     <ul className="flex flex-col justify-between items-center gap-4 md:gap-10 md:flex-row text-white text-2xl">
-      <li>SOBRE MIM</li>
-      <li>PROJETOS</li>
-      <li>EXPERIENCIAS</li>
-      <li>CONTATO</li>
+      {menuItems.map((item) => (<li key={item} className={listItemHoverClass}>{item}</li>))}
     </ul>
   );
 }
