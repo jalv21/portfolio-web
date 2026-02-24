@@ -29,7 +29,7 @@ export function LanguageMenu({ children }: { children: React.ReactNode }) {
 }
 
 export function LanguageButton({ language }: { language: any }) {
-  const buttonActiveClass = "bg-neutral-400 shadow-neutral-300";
+  // const buttonActiveClass = "bg-neutral-400 shadow-neutral-300";
   const buttonHoverClass = "hover:cursor-pointer hover:bg-neutral-400 hover:shadow-neutral-300 transition-all duration-300";
 
   return (
