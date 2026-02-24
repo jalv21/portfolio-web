@@ -9,16 +9,14 @@ const languages = [
 export default function PageLayout() {
   return (
     <Background>
-      <section className="bg-black flex flex-col items-center justify-around gap-2 h-screen font-jetbrains">
-        <LanguageMenu>
-          {languages.map((language) => (<LanguageButton language={language} />))}
-        </LanguageMenu>
-        <Profile>
-          <ProfilePicture />
-          <ProfileHeading />
-        </Profile>
-        <MainMenu />
-      </section>
+      <LanguageMenu>
+        {languages.map((language) => (<LanguageButton language={language} />))}
+      </LanguageMenu>
+      <Profile>
+        <ProfilePicture />
+        <ProfileHeading />
+      </Profile>
+      <MainMenu />
     </Background>
   );
 }

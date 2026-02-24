@@ -6,10 +6,13 @@ export default function Background({
   children: React.ReactNode;
 }) {
   return (
-    <>
+    <div className="relative h-screen overflow-hidden">
+      <div className="absolute inset-0 bg-black -z-20"></div>
       <Particles />
-      {children}
-    </>
+      <div className="relative z-auto flex flex-col items-center justify-around gap-2 h-screen font-jetbrains">
+        {children}
+      </div>
+    </div>
   );
 }
 
@@ -22,7 +25,7 @@ export function Particles() {
       id: i,
       size: Math.random() * 8 + 4, // size range
       left: `${Math.random() * 100}%`, // position range for all directions
-      top: `${Math.random() * 100}%`, 
+      top: `${Math.random() * 100}%`,
       duration: Math.random() * 10 + 10, // duration range
       delay: Math.random() * 5, // delay range
     }));
