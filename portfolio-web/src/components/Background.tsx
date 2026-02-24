@@ -17,17 +17,17 @@ export default function Background({
 }
 
 export function Particles() {
-  const particleCount = 20;
-  let particleClassName = "absolute bg-white rounded-full blur-[1px] animate-float-fade";
+  const particleCount = 100;
+  let particleClassName = "absolute bg-white rounded-full blur-[1px] animate-pulse";
 
   const particles = useMemo(() => {
     return Array.from({ length: particleCount }).map((_, i) => ({
       id: i,
-      size: Math.random() * 8 + 4, // size range
+      size: Math.random() * 4, // size range
       left: `${Math.random() * 100}%`, // position range for all directions
       top: `${Math.random() * 100}%`,
-      duration: Math.random() * 10 + 10, // duration range
-      delay: Math.random() * 5, // delay range
+      duration: Math.random() * 2 + 1, // duration range
+      delay: Math.random() * 2, // delay range
     }));
   }, []);
 
