@@ -1,4 +1,5 @@
 import React from 'react';
+import Background from './Background';
 
 const languages = [
   { name: 'Português', acronym: 'PT-BR', iconPath: './public/brazil-flag.png' },
@@ -7,16 +8,18 @@ const languages = [
 
 export default function PageLayout() {
   return (
-    <section className="bg-black flex flex-col items-center justify-around gap-2 h-screen font-jetbrains">
-      <LanguageMenu>
-        {languages.map((language) => (<LanguageButton language={language} />))}
-      </LanguageMenu>
-      <Profile>
-        <ProfilePicture />
-        <ProfileHeading />
-      </Profile>
-      <MainMenu />
-    </section>
+    <Background>
+      <section className="bg-black flex flex-col items-center justify-around gap-2 h-screen font-jetbrains">
+        <LanguageMenu>
+          {languages.map((language) => (<LanguageButton language={language} />))}
+        </LanguageMenu>
+        <Profile>
+          <ProfilePicture />
+          <ProfileHeading />
+        </Profile>
+        <MainMenu />
+      </section>
+    </Background>
   );
 }
 
@@ -33,7 +36,7 @@ export function LanguageButton({ language }: { language: any }) {
   const buttonHoverClass = "hover:cursor-pointer hover:bg-neutral-400 hover:shadow-neutral-300 transition-all duration-300";
 
   return (
-    <button 
+    <button
       className={`${buttonHoverClass} bg-neutral-500 text-white font-display flex items-center justify-center gap-2 px-4 py-2 rounded-full shadow-lg shadow-neutral-400`}
       onClick={() => {
         alert(language.name);

@@ -1,6 +1,6 @@
 import React, { useMemo } from "react";
 
-export default function GridBackground({
+export default function Background({
   children,
 }: {
   children: React.ReactNode;
@@ -16,19 +16,15 @@ export default function GridBackground({
 export function Particles() {
   const particleCount = 20;
   let particleClassName = "absolute bg-white rounded-full blur-[1px] animate-float-fade";
-  const sizeRange = Math.random() * 8 + 4;
-  const positionRange = Math.random() * 100;
-  const durationRange = Math.random() * 10 + 10;
-  const delayRange = Math.random() * 5;
 
   const particles = useMemo(() => {
     return Array.from({ length: particleCount }).map((_, i) => ({
       id: i,
-      size: sizeRange,
-      left: `${positionRange}%`,
-      top: `${positionRange}%`,
-      duration: durationRange,
-      delay: delayRange,
+      size: Math.random() * 8 + 4, // size range
+      left: `${Math.random() * 100}%`, // position range for all directions
+      top: `${Math.random() * 100}%`, 
+      duration: Math.random() * 10 + 10, // duration range
+      delay: Math.random() * 5, // delay range
     }));
   }, []);
 
