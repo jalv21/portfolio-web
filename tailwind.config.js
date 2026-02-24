@@ -2,7 +2,7 @@
 export default {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
-    extend: {
+    /* extend: {
       keyframes: {
         "float-fade": {
           "0%, 100%": {
@@ -24,7 +24,7 @@ export default {
       animation: {
         "float-fade": "float-fade linear infinite",
       },
-    },
+    }, */
   },
   plugins: [],
 };
