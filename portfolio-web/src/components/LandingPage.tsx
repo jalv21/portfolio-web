@@ -31,7 +31,7 @@ export function LanguageMenu({ children }: { children: React.ReactNode }) {
 
 export function LanguageButton({ language }: { language: any }) {
   // const buttonActiveClass = "bg-neutral-400 shadow-neutral-300";
-  const buttonHoverClass = "hover:cursor-pointer hover:bg-neutral-400 hover:shadow-neutral-300 transition-all duration-300";
+  const buttonHoverClass = "transform origin-center hover:scale-112 hover:mx-2 hover:cursor-pointer hover:bg-neutral-400 hover:shadow-neutral-300 transition-all duration-300";
 
   return (
     <button
@@ -73,7 +73,7 @@ export function ProfileHeading() {
 
 export function MainMenu() {
   const menuItems = ['SOBRE MIM', 'PROJETOS', 'EXPERIENCIAS', 'CONTATO'];
-  const listItemHoverClass = "cursor-pointer hover:text-green-200 hover:text-shadow-md hover:text-shadow-green-800 transition-all duration-400";
+  const listItemHoverClass = "transform origin-center hover:scale-105 hover:cursor-pointer hover:text-green-200 hover:text-shadow-md hover:text-shadow-purple-800 transition-all duration-400";
 
   return (
     <ul className="flex flex-col justify-between items-center gap-4 md:gap-10 md:flex-row text-white text-2xl">
