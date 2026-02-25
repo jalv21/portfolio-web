@@ -8,6 +8,8 @@ export default function Background({
   return (
     <div className="relative h-screen overflow-hidden">
       <div className="absolute inset-0 bg-black -z-20"></div>
+      <div className="absolute inset-0 bg-gradient-to-br from-purple-200 via-blue-200 to-green-200 opacity-25 -z-20"></div>
+      <div className="absolute inset-0 bg-[url(./public/background-grid.png)] bg-repeat bg-cover opacity-10 -z-20"></div>
       <Particles />
       <div className="relative z-auto flex flex-col items-center justify-around gap-2 h-screen font-jetbrains">
         {children}
@@ -18,7 +20,7 @@ export default function Background({
 
 export function Particles() {
   const particleCount = 100;
-  let particleClassName = "absolute bg-white rounded-full blur-[1px] animate-pulse";
+  let particleClassName = "absolute bg-white rounded-full blur-[1px] animate-pulse shadow-lg shadow-neutral-200/50"
 
   const particles = useMemo(() => {
     return Array.from({ length: particleCount }).map((_, i) => ({
