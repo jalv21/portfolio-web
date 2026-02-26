@@ -4,6 +4,7 @@ import Background from './Background';
 export default function PageLayout() {
   return (
     <Background>
+      <Navigation />
       <Profile>
         <ProfilePicture />
         <ProfileHeading />
@@ -11,6 +12,17 @@ export default function PageLayout() {
       <Button />
     </Background>
   );
+}
+
+export function Navigation({}: {}) {
+  let itemClassName = "text-white text-lg font-jetbrains hover:text-green-200 transition-colors duration-300 ease-in-out";
+  return (
+    <section className="bg-black bg-opacity-50 w-full p-4">
+      <ul className="flex justify-between items-center">
+        <li className={itemClassName}><a href="">A</a></li>
+      </ul>
+    </section>
+  )
 }
 
 export function Profile({ children }: { children: React.ReactNode }) {
