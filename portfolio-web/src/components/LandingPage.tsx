@@ -1,48 +1,15 @@
 import React from 'react';
 import Background from './Background';
 
-const languages = [
-  { name: 'Português', acronym: 'PT-BR', iconPath: './public/brazil-flag.png' },
-  { name: 'English', acronym: 'EN', iconPath: './public/usa-flag.png' }
-];
-
 export default function PageLayout() {
   return (
     <Background>
-      <LanguageMenu>
-        {languages.map((language) => (<LanguageButton language={language} />))}
-      </LanguageMenu>
       <Profile>
         <ProfilePicture />
         <ProfileHeading />
       </Profile>
-      <MainMenu />
+      <Button />
     </Background>
-  );
-}
-
-export function LanguageMenu({ children }: { children: React.ReactNode }) {
-  return (
-    <div className="flex justify-center gap-2">
-      {children}
-    </div>
-  );
-}
-
-export function LanguageButton({ language }: { language: any }) {
-  // const buttonActiveClass = "bg-neutral-400 shadow-neutral-300";
-  const buttonHoverClass = "transform origin-center hover:scale-112 hover:mx-2 hover:cursor-pointer hover:bg-neutral-400 hover:shadow-neutral-300 transition-all duration-300";
-
-  return (
-    <button
-      className={`${buttonHoverClass} bg-neutral-500 text-white font-display flex items-center justify-center gap-2 px-4 py-2 rounded-full shadow-lg shadow-neutral-400`}
-      onClick={() => {
-        alert(language.name);
-      }}
-    >
-      <img src={language.iconPath} alt={`${language.name} language icon`} className="mr-2" />
-      {language.acronym}
-    </button>
   );
 }
 
@@ -71,13 +38,13 @@ export function ProfileHeading() {
   );
 }
 
-export function MainMenu() {
-  const menuItems = ['SOBRE MIM', 'PROJETOS', 'EXPERIENCIAS', 'CONTATO'];
-  const listItemHoverClass = "transform origin-center hover:scale-105 hover:cursor-pointer hover:text-green-200 hover:text-shadow-md hover:text-shadow-purple-800 transition-all duration-400";
+export function Button() {
+  const defaultClassName = "font-sans text-2xl px-6 py-3 font-bold bg-gradient-to-r from-green-200 via-blue-200 to-purple-200 text-black rounded-full";
+  const hoverClassName = "transform hover:scale-105 transition-all duration-300 ease-in-out";
 
   return (
-    <ul className="flex flex-col justify-between items-center gap-4 md:gap-10 md:flex-row text-white text-2xl">
-      {menuItems.map((item) => (<li key={item} className={listItemHoverClass}>{item}</li>))}
-    </ul>
-  );
+    <>
+      <a href="./AboutMe" className={`${defaultClassName} ${hoverClassName}`}>Check my portfolio</a>
+    </>
+  )
 }
