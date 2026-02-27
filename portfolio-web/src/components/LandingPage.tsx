@@ -1,11 +1,12 @@
 import React from "react";
 import Background from "./Background";
+import NavigationBar from "./Navigation";
 
 export default function PageLayout() {
   return (
     <Background>
-      <Navigation />
-      <div className="relative z-auto flex flex-col items-center justify-around gap-2 h-screen font-jetbrains">
+      <NavigationBar innerMenu={[]}/>
+      <div className="relative z-auto flex flex-col items-center justify-evenly gap-2 h-screen font-jetbrains">
         <Profile>
           <ProfilePicture />
           <ProfileHeading />
@@ -13,20 +14,6 @@ export default function PageLayout() {
         <Button />
       </div>
     </Background>
-  );
-}
-
-export function Navigation({}: {}) {
-  let itemClassName =
-    "text-white text-lg font-jetbrains hover:text-green-200 transition-colors duration-300 ease-in-out";
-  return (
-    <section className="bg-black bg-opacity-50 w-full p-4">
-      <ul className="flex justify-between items-center">
-        <li className={itemClassName}>
-          <a href="">A</a>
-        </li>
-      </ul>
-    </section>
   );
 }
 
