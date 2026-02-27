@@ -11,9 +11,7 @@ export default function Background({
       <div className="absolute inset-0 bg-gradient-to-br from-purple-200 via-blue-200 to-green-200 opacity-25 -z-20"></div> 
       <div className="absolute inset-0 bg-[url(./public/background-grid.png)] bg-repeat bg-cover opacity-10 -z-20"></div>
       <Particles />
-      <div className="relative z-auto flex flex-col items-center justify-around gap-2 h-screen font-jetbrains">
-        {children}
-      </div>
+      {children}
     </div>
   );
 }
