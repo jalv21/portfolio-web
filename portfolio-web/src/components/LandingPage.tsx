@@ -2,14 +2,15 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 import Background from "./Background";
 import NavigationBar from "./Navigation";
+import ProfilePicture from "./ProfilePicture";
 
 export default function PageLayout() {
   return (
     <Background>
-      <NavigationBar innerMenu={[]}/>
+      <NavigationBar innerMenu={[]} paths={[]} />
       <div className="relative z-auto flex flex-col items-center justify-evenly gap-2 h-screen font-jetbrains">
         <Profile>
-          <ProfilePicture />
+          <ProfilePicture size="md"/>
           <ProfileHeading />
         </Profile>
         <Button path="/sobremim" />
@@ -23,18 +24,6 @@ export function Profile({ children }: { children: React.ReactNode }) {
     <section className="flex flex-col items-center justify-center">
       {children}
     </section>
-  );
-}
-
-export function ProfilePicture() {
-  return (
-    <div className="flex justify-center items-center h-48 w-48 rounded-full bg-linear-to-b from-purple-200 to-green-200">
-      <img
-        src="./public/profile-picture.jpg"
-        alt="Developer Profile Picture"
-        className="size-9/10 object-fit rounded-full"
-      />
-    </div>
   );
 }
 
