@@ -1,4 +1,5 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import Background from "./Background";
 import NavigationBar from "./Navigation";
 
@@ -11,7 +12,7 @@ export default function PageLayout() {
           <ProfilePicture />
           <ProfileHeading />
         </Profile>
-        <Button />
+        <Button path="/sobremim" />
       </div>
     </Background>
   );
@@ -50,15 +51,21 @@ export function ProfileHeading() {
   );
 }
 
-export function Button() {
+export function Button({ path: path, }: { path: string }) {
   const defaultClassName =
-    "font-sans text-2xl px-8 py-3 font-bold bg-gradient-to-r from-green-200 via-blue-200 to-purple-200 text-black rounded-full";
+    " mb-10 font-sans text-2xl px-8 py-3 font-bold bg-gradient-to-r from-green-200 via-blue-200 to-purple-200 text-black rounded-full";
   const hoverClassName =
-    "transform hover:scale-105 transition-all duration-300 ease-in-out";
+    "cursor-pointer transform hover:scale-105 transition-all duration-300 ease-in-out";
 
+  const navigate = useNavigate();
+
+  const handleClick = () => {
+    navigate(path);
+  };
+  
   return (
     <>
-      <a href="./AboutMe" className={`${defaultClassName} ${hoverClassName}`}>
+      <a onClick={handleClick} className={`${defaultClassName} ${hoverClassName}`}>
         Check my portfolio
       </a>
     </>
