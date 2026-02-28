@@ -1,8 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import Background from "./Background";
-import NavigationBar from "./Navigation";
-import ProfilePicture from "./ProfilePicture";
+import Background from "./components/Background";
+import NavigationBar from "./components/Navigation";
+import ProfilePicture from "./components/ProfilePicture";
 
 export default function PageLayout() {
   return (

@@ -1,7 +1,7 @@
 import React from "react";
-import Background from "./Background";
-import NavigationBar from "./Navigation";
-import ProfilePicture from "./ProfilePicture";
+import Background from "./components/Background";
+import NavigationBar from "./components/Navigation";
+import ProfilePicture from "./components/ProfilePicture";
 import { Code } from "@mui/icons-material";
 
 export default function AboutMe() {

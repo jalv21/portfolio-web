@@ -1,9 +1,9 @@
 import { Routes, Route } from 'react-router-dom';
-import LandingPage from './components/LandingPage';
-import AboutMe from './components/AboutMe';
-import Experiences from './components/Experiences';
-import Projects from './components/Projects';
-import Contact from './components/Contact';
+import LandingPage from './LandingPage';
+import AboutMe from './AboutMe';
+import Experiences from './Experiences';
+import Projects from './Projects';
+import Contact from './Contact';
 
 export default function App() {
   return (
