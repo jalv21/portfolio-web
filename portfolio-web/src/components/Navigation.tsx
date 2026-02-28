@@ -1,3 +1,4 @@
+import { useNavigate } from "react-router-dom";
 import {
   NavigateBefore,
   NavigateNext,
@@ -7,8 +8,10 @@ import {
 
 export default function NavigationBar({
   innerMenu,
+  paths,
 }: {
   innerMenu: React.ReactNode[];
+  paths: string[];
 }) {
   const itemClassName =
     "text-white text-lg font-jetbrains hover:cursor-pointer";
@@ -33,11 +36,9 @@ export default function NavigationBar({
         </div>
         <NavigationItem icon=<Translate /> className={itemClassName} link="" />
       </ul>
-      <div className="flex flex-col mt-4 md:flex-row md:justify-center md:gap-8">
+      <div className="flex flex-wrap gap-4 mt-4 md:flex-row md:gap-8">
         {innerMenu.map((node, i) => (
-          <span key={i} className={itemClassName}>
-            {node}
-          </span>
+          <InnerMenuItem key={i} name={node as string} path={paths[i]} />
         ))}
       </div>
     </section>
@@ -56,3 +57,15 @@ const NavigationItem = (props: NavItemProps) => {
     </li>
   );
 };
+
+const InnerMenuItem = (props: { name: string; path: string }) => {
+  const navigate = useNavigate();
+  const handleClick = () => {
+    navigate(props.path);
+  }
+  return (
+    <span className="text-white text-lg font-jetbrains hover:cursor-pointer">
+      {props.name}
+    </span>
+  );
+}
