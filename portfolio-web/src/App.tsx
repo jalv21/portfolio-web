@@ -1,6 +1,9 @@
 import { Routes, Route } from 'react-router-dom';
 import LandingPage from './components/LandingPage';
 import AboutMe from './components/AboutMe';
+import Experiences from './components/Experiences';
+import Projects from './components/Projects';
+import Contact from './components/Contact';
 
 export default function App() {
   return (
