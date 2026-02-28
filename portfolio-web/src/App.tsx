@@ -7,6 +7,9 @@ export default function App() {
     <Routes>
       <Route path="/" element={<LandingPage />} />
       <Route path="/sobremim" element={<AboutMe />} />
+      <Route path="/experiencias" element={<Experiences />} />
+      <Route path="/projetos" element={<Projects />} />
+      <Route path="/contato" element={<Contact />} />
     </Routes>
   );
 }
