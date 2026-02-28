@@ -36,7 +36,7 @@ export default function NavigationBar({
         </div>
         <NavigationItem icon=<Translate /> className={itemClassName} link="" />
       </ul>
-      <div className="flex flex-col mt-4 md:flex-row md:gap-8">
+      <div className="flex flex-wrap gap-4 mt-4 md:flex-row md:gap-8">
         {innerMenu.map((node, i) => (
           <InnerMenuItem key={i} name={node as string} path={paths[i]} />
         ))}
