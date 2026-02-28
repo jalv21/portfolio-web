@@ -1,4 +1,4 @@
-import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import {
   NavigateBefore,
   NavigateNext,
@@ -59,13 +59,9 @@ const NavigationItem = (props: NavItemProps) => {
 };
 
 const InnerMenuItem = (props: { name: string; path: string }) => {
-  const navigate = useNavigate();
-  const handleClick = () => {
-    navigate(props.path);
-  }
   return (
     <span className="text-white text-lg font-jetbrains hover:cursor-pointer">
-      {props.name}
+      <Link to={props.path}>{props.name}</Link>
     </span>
   );
 }
