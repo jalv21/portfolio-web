@@ -1,5 +1,5 @@
-import Background from "./Background";
-import NavigationBar from "./Navigation";
+import Background from "./components/Background";
+import NavigationBar from "./components/Navigation";
 
 export default function Experiences() {
     return (
