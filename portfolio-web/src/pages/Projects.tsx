@@ -1,7 +1,7 @@
-import Background from "./components/Background";
-import NavigationBar from "./components/Navigation";
+import Background from "../components/Background";
+import NavigationBar from "../components/Navigation";
 
-export default function Experiences() {
+export default function Projects() {
     return (
         <Background>
             <NavigationBar innerMenu={[]} paths={[]} />

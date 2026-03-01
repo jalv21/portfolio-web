@@ -1,7 +1,7 @@
-import Background from "./components/Background";
-import NavigationBar from "./components/Navigation";
+import Background from "../components/Background";
+import NavigationBar from "../components/Navigation";
 
-export default function Contact() {
+export default function Experiences() {
     return (
         <Background>
             <NavigationBar innerMenu={[]} paths={[]} />
