@@ -1,13 +1,93 @@
 import Background from "../components/Background";
 import NavigationBar from "../components/Navigation";
+import ContentWrapper from "../components/ContentWrapper";
+import projectsData from "../data/projects.json";
 
 export default function Projects() {
     return (
         <Background>
-            <NavigationBar innerMenu={[]} paths={[]} />
-            <div className="flex justify-center items-center h-screen font-jetbrains">
-                <h1 className="text-4xl font-bold text-white">Em breve</h1>
-            </div>
+            <NavigationBar hasMenu={true} />
+            <ContentWrapper>
+                <ProjectsBanner />
+                <ProjectsTimeline />
+            </ContentWrapper>
         </Background>
+    );
+}
+
+const ProjectsBanner = () => {
+    return (
+        <div className="w-full h-35 bg-gradient-to-r from-green-200 to-purple-200 rounded-lg flex items-center justify-center">
+            <h1 className="text-3xl font-bold text-black">Projetos</h1>
+        </div>
+    );
+}
+
+const ProjectsTimeline = () => {
+    return (
+        <div className="w-full flex flex-col items-center md:flex-row md:justify-center md:items-start">
+            <ProjectContainer projects={projectsData} />
+        </div>
+    );
+}
+
+const ProjectContainer = ({ projects }: { projects: IProject[] }) => {
+    return (
+        <div className="flex flex-col gap-3 md:flex-row md:flex-wrap">
+            {projects.map((project) => (
+                <Project
+                    key={project.name}
+                    name={project.name}
+                    desc={project.desc}
+                    date={project.date}
+                    techStack={project.techStack}
+                    githubUrl={project.githubUrl}
+                    coverImgPath={project.coverImgPath}
+                />
+            ))}
+        </div>
+    );
+}
+
+interface IProject {
+    name: string;
+    desc: string;
+    date: string;
+    techStack: ITechStack[];
+    githubUrl: string;
+    coverImgPath: string;
+}
+const Project = (props: IProject) => {
+    return (
+        <div className="p-3 flex flex-col gap-4 bg-black/40 backdrop-blur-sm rounded-lg">
+            <img src={props.coverImgPath} alt={props.name + 'cover image'} className="h-45"></img>
+            <span className="flex flex-col gap-2 flex-wrap">
+                <h2 className="text-xl font-bold">{props.name}</h2>
+                <p className="text-green-200">{props.desc}</p>
+            </span>
+            <TechStackBlocks stackItems={props.techStack}/>
+        </div>
+    );
+}
+
+export function TechStackBlocks({ stackItems }: { stackItems: ITechStack[] }) {
+    return (
+        <div className="flex gap-2 flex-wrap items-center">
+            {stackItems.map((item) => (
+                <StackItem name={item.name}/>
+            ))}
+        </div>
+    );
+}
+
+
+export interface ITechStack {
+    name: string;
+}
+const StackItem = (props: ITechStack) => {
+    return (
+        <div className="flex gap-2 items-center p-2">
+            <p>{props.name}</p>
+        </div>
     );
 }

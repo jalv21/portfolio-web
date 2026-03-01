@@ -7,7 +7,7 @@ import ProfilePicture from "../components/ProfilePicture";
 export default function PageLayout() {
   return (
     <Background>
-      <NavigationBar innerMenu={[]} paths={[]} />
+      <NavigationBar hasMenu={false} />
       <div className="relative z-auto flex flex-col items-center justify-evenly gap-2 h-screen font-jetbrains">
         <Profile>
           <ProfilePicture size="md"/>

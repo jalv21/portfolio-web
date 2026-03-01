@@ -1,30 +1,18 @@
-import React from "react";
 import Background from "../components/Background";
 import NavigationBar from "../components/Navigation";
+import ContentWrapper from "../components/ContentWrapper";
 import ProfilePicture from "../components/ProfilePicture";
 import { Code } from "@mui/icons-material";
 
 export default function AboutMe() {
-    const itensMenu = ["Sobre Mim", "Experiências", "Projetos", "Contato"];
-    const paths = ["/sobremim", "/experiencias", "/projetos", "/contato"];
     return (
         <Background>
-            <NavigationBar innerMenu={itensMenu} paths={paths} />
-            <div className="relative z-auto flex flex-col items-start justify-center h-screen">
-                <Content>
-                    <ProfileBanner />
-                    <ProfileContent />
-                </Content>
-            </div>
+            <NavigationBar hasMenu={true} />
+            <ContentWrapper>
+                <ProfileBanner />
+                <ProfileContent />
+            </ContentWrapper>
         </Background>
-    );
-}
-
-const Content = ({ children }: { children: React.ReactNode }) => {
-    return (
-        <div className="relative z-auto flex flex-col items-center w-screen size-9/10 font-jetbrains text-white gap-4">
-            {children}
-        </div>
     );
 }
 
@@ -79,8 +67,8 @@ const Skills = () => {
     const estudando = ["Spring Boot", "Docker", "Kubernetes", "Grafana"];
     return (
         <div className="flex flex-col gap-4 p-4">
-            <TechStack heading="Tecnologias" techs={techs}/>
-            <TechStack heading="Estudando" techs={estudando}/>
+            <TechStack heading="Tecnologias" techs={techs} />
+            <TechStack heading="Estudando" techs={estudando} />
         </div>
     );
 }
@@ -93,7 +81,7 @@ const TechStack = (props: { heading: string, techs: string[] }) => {
                 {props.techs.map((tech, index) => (
                     <p key={index}>{tech}</p>
                 ))}
-            </div> 
+            </div>
         </div>
     );
 }

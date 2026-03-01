@@ -6,10 +6,10 @@ export default function Background({
   children: React.ReactNode;
 }) {
   return (
-    <div className="relative h-screen overflow-hidden">
-      <div className="absolute inset-0 bg-black -z-20"></div>
-      <div className="absolute inset-0 bg-gradient-to-br from-purple-200 via-blue-200 to-green-200 opacity-25 -z-20"></div> 
-      <div className="absolute inset-0 bg-[url(./public/background-grid.png)] bg-repeat bg-cover opacity-10 -z-20"></div>
+    <div className="relative min-h-screen overflow-y-auto flex flex-col items-center">
+      <div className="fixed inset-0 bg-black -z-20"></div>
+      <div className="fixed inset-0 bg-gradient-to-br from-purple-200 via-blue-200 to-green-200 opacity-25 -z-20"></div> 
+      <div className="fixed inset-0 bg-[url(./public/background-grid.png)] bg-repeat bg-contain opacity-10 -z-20"></div>
       <Particles />
       {children}
     </div>
@@ -32,7 +32,7 @@ export function Particles() {
   }, []);
 
   return (
-    <div className="fixed inset-0 -z-10 overflow-hidden bg-transparent">
+    <div className="-z-10 overflow-hidden bg-transparent">
       {particles.map((p) => (
         <div
           key={p.id}
