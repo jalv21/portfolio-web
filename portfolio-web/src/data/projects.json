@@ -1,0 +1,38 @@
+[
+    {
+        "name": "Project 1",
+        "desc": "Lorem ipsum dolor sit amet",
+        "date": "01/03/2026",
+        "techStack": [
+            { "name": "React" },
+            { "name": "TypeScript" },
+            { "name": "TailwindCSS "}
+        ],
+        "githubUrl": "https://github.com",
+        "coverImgPath": "../background-grid.png"
+    },
+    {
+        "name": "Project 2",
+        "desc": "Lorem ipsum dolor sit amet",
+        "date": "01/03/2026",
+        "techStack": [
+            { "name": "React" },
+            { "name": "TypeScript" },
+            { "name": "TailwindCSS "}
+        ],
+        "githubUrl": "https://github.com",
+        "coverImgPath": "../background-grid.png"
+    },
+    {
+        "name": "Project 3",
+        "desc": "Lorem ipsum dolor sit amet",
+        "date": "01/03/2026",
+        "techStack": [
+            { "name": "React" },
+            { "name": "TypeScript" },
+            { "name": "TailwindCSS "}
+        ],
+        "githubUrl": "https://github.com",
+        "coverImgPath": "../background-grid.png"
+    }
+]

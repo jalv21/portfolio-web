@@ -2,8 +2,6 @@ import Background from "../components/Background";
 import NavigationBar from "../components/Navigation";
 import ContentWrapper from "../components/ContentWrapper";
 import projectsData from "../data/projects.json";
-import TechStackBlocks  from "../components/TechStackBlocks";
-import ITechStack from "../components/TechStackBlocks";
 
 export default function Projects() {
     return (
@@ -68,19 +66,41 @@ interface IProject {
     name: string;
     desc: string;
     date: string;
-    techStack: typeof ITechStack[];
+    techStack: ITechStack[];
     githubUrl: string;
     coverImgPath: string;
 }
 const Project = (props: IProject) => {
     return (
         <div className="p-3 flex flex-col gap-4 bg-black/40 backdrop-blur-sm rounded-lg">
-            <img src={props.coverImgPath} alt={props.name + 'cover image'} className="h-6/10"></img>
+            <img src={props.coverImgPath} alt={props.name + 'cover image'} className="h-45"></img>
             <span className="flex flex-col gap-2 flex-wrap">
                 <h2 className="text-xl font-bold">{props.name}</h2>
                 <p className="text-green-200">{props.desc}</p>
             </span>
             <TechStackBlocks stackItems={props.techStack}/>
+        </div>
+    );
+}
+
+export function TechStackBlocks({ stackItems }: { stackItems: ITechStack[] }) {
+    return (
+        <div className="flex gap-4 flex-wrap items-center">
+            {stackItems.map((item) => (
+                <StackItem name={item.name}/>
+            ))}
+        </div>
+    );
+}
+
+
+export interface ITechStack {
+    name: string;
+}
+const StackItem = (props: ITechStack) => {
+    return (
+        <div className="flex gap-2 items-center p-2">
+            <p>{props.name}</p>
         </div>
     );
 }
