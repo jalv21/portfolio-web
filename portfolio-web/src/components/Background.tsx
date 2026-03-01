@@ -6,7 +6,7 @@ export default function Background({
   children: React.ReactNode;
 }) {
   return (
-    <div className="relative h-screen overflow-hidden">
+    <div className="relative h-screen overflow-hidden flex flex-col items-center">
       <div className="absolute inset-0 bg-black -z-20"></div>
       <div className="absolute inset-0 bg-gradient-to-br from-purple-200 via-blue-200 to-green-200 opacity-25 -z-20"></div> 
       <div className="absolute inset-0 bg-[url(./public/background-grid.png)] bg-repeat bg-cover opacity-10 -z-20"></div>

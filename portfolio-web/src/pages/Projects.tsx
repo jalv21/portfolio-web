@@ -16,7 +16,8 @@ export default function Projects() {
 
 const ProjectsBanner = () => {
     return (
-        <></>
+        <div className="w-full h-2/10 md:h-3/10 lg:h-4/10 bg-gradient-to-r from-purple-200 to-green-200 rounded-lg">
+        </div>
     );
 }
 

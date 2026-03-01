@@ -8,12 +8,10 @@ export default function AboutMe() {
     return (
         <Background>
             <NavigationBar hasMenu={true} />
-            <div className="relative z-auto flex flex-col items-start justify-center h-screen">
-                <ContentWrapper>
-                    <ProfileBanner />
-                    <ProfileContent />
-                </ContentWrapper>
-            </div>
+            <ContentWrapper>
+                <ProfileBanner />
+                <ProfileContent />
+            </ContentWrapper>
         </Background>
     );
 }
@@ -69,8 +67,8 @@ const Skills = () => {
     const estudando = ["Spring Boot", "Docker", "Kubernetes", "Grafana"];
     return (
         <div className="flex flex-col gap-4 p-4">
-            <TechStack heading="Tecnologias" techs={techs}/>
-            <TechStack heading="Estudando" techs={estudando}/>
+            <TechStack heading="Tecnologias" techs={techs} />
+            <TechStack heading="Estudando" techs={estudando} />
         </div>
     );
 }
@@ -83,7 +81,7 @@ const TechStack = (props: { heading: string, techs: string[] }) => {
                 {props.techs.map((tech, index) => (
                     <p key={index}>{tech}</p>
                 ))}
-            </div> 
+            </div>
         </div>
     );
 }
