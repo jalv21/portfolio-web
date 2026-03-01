@@ -7,11 +7,9 @@ import {
 } from "@mui/icons-material";
 
 export default function NavigationBar({
-  innerMenu,
-  paths,
+  hasMenu,
 }: {
-  innerMenu: React.ReactNode[];
-  paths: string[];
+  hasMenu?: boolean;
 }) {
   const itemClassName =
     "text-white text-lg font-jetbrains hover:cursor-pointer";
@@ -36,11 +34,7 @@ export default function NavigationBar({
         </div>
         <NavigationItem icon=<Translate /> className={itemClassName} link="" />
       </ul>
-      <div className="flex flex-wrap gap-4 mt-4 md:flex-row md:gap-8">
-        {innerMenu.map((node, i) => (
-          <InnerMenuItem key={i} name={node as string} path={paths[i]} />
-        ))}
-      </div>
+      {hasMenu && <InnerMenu />}
     </section>
   );
 }
@@ -63,5 +57,16 @@ const InnerMenuItem = (props: { name: string; path: string }) => {
     <span className="text-white text-lg font-jetbrains hover:cursor-pointer">
       <Link to={props.path}>{props.name}</Link>
     </span>
+  );
+}
+
+const InnerMenu = () => {
+  return (
+    <div className="flex flex-wrap gap-4 mt-4 md:flex-row md:gap-8">
+      <InnerMenuItem name="Sobre Mim" path="/sobremim" />
+      <InnerMenuItem name="Experiências" path="/experiencias" />
+      <InnerMenuItem name="Projetos" path="/projetos" />
+      <InnerMenuItem name="Contato" path="/contato" />
+    </div>
   );
 }

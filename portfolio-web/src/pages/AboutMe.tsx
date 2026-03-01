@@ -5,11 +5,9 @@ import ProfilePicture from "../components/ProfilePicture";
 import { Code } from "@mui/icons-material";
 
 export default function AboutMe() {
-    const itensMenu = ["Sobre Mim", "Experiências", "Projetos", "Contato"];
-    const paths = ["/sobremim", "/experiencias", "/projetos", "/contato"];
     return (
         <Background>
-            <NavigationBar innerMenu={itensMenu} paths={paths} />
+            <NavigationBar hasMenu={true} />
             <div className="relative z-auto flex flex-col items-start justify-center h-screen">
                 <Content>
                     <ProfileBanner />
