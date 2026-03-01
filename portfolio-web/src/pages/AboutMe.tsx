@@ -1,6 +1,6 @@
-import React from "react";
 import Background from "../components/Background";
 import NavigationBar from "../components/Navigation";
+import ContentWrapper from "../components/ContentWrapper";
 import ProfilePicture from "../components/ProfilePicture";
 import { Code } from "@mui/icons-material";
 
@@ -9,20 +9,12 @@ export default function AboutMe() {
         <Background>
             <NavigationBar hasMenu={true} />
             <div className="relative z-auto flex flex-col items-start justify-center h-screen">
-                <Content>
+                <ContentWrapper>
                     <ProfileBanner />
                     <ProfileContent />
-                </Content>
+                </ContentWrapper>
             </div>
         </Background>
-    );
-}
-
-const Content = ({ children }: { children: React.ReactNode }) => {
-    return (
-        <div className="relative z-auto flex flex-col items-center w-screen size-9/10 font-jetbrains text-white gap-4">
-            {children}
-        </div>
     );
 }
 
