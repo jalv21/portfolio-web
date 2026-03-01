@@ -17,7 +17,7 @@ export default function Projects() {
 
 const ProjectsBanner = () => {
     return (
-        <div className="w-full h-3/10 bg-gradient-to-r from-green-200 to-purple-200 rounded-lg flex items-center justify-center">
+        <div className="w-full h-35 bg-gradient-to-r from-green-200 to-purple-200 rounded-lg flex items-center justify-center">
             <h1 className="text-3xl font-bold text-black">Projetos</h1>
         </div>
     );
@@ -26,27 +26,14 @@ const ProjectsBanner = () => {
 const ProjectsTimeline = () => {
     return (
         <div className="w-full flex flex-col items-center md:flex-row md:justify-center md:items-start">
-            <Timeline />
             <ProjectContainer projects={projectsData} />
         </div>
     );
 }
 
-const Timeline = () => {
-    return (
-        <></>
-    );
-}
-
-const Date = () => {
-    return (
-        <></>
-    );
-}
-
 const ProjectContainer = ({ projects }: { projects: IProject[] }) => {
     return (
-        <div className="flex flex-col gap-3">
+        <div className="flex flex-col gap-3 md:flex-row md:flex-wrap">
             {projects.map((project) => (
                 <Project
                     key={project.name}
@@ -85,7 +72,7 @@ const Project = (props: IProject) => {
 
 export function TechStackBlocks({ stackItems }: { stackItems: ITechStack[] }) {
     return (
-        <div className="flex gap-4 flex-wrap items-center">
+        <div className="flex gap-2 flex-wrap items-center">
             {stackItems.map((item) => (
                 <StackItem name={item.name}/>
             ))}
