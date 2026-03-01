@@ -2,6 +2,7 @@ import Background from "../components/Background";
 import NavigationBar from "../components/Navigation";
 import ContentWrapper from "../components/ContentWrapper";
 import projectsData from "../data/projects.json";
+import { GitHubLogoIcon } from "@radix-ui/react-icons";
 
 export default function Projects() {
     return (
@@ -66,6 +67,10 @@ const Project = (props: IProject) => {
                 <p className="text-green-200">{props.desc}</p>
             </span>
             <TechStackBlocks stackItems={props.techStack}/>
+            <a href={props.githubUrl} className="flex gap-2 items-center p-2 w-50 bg-white text-black rounded-lg font-bold text-sm">
+                <GitHubLogoIcon />
+                Ver no GitHub
+            </a>
         </div>
     );
 }
