@@ -26,17 +26,5 @@
         ],
         "githubUrl": "https://github.com",
         "coverImgPath": "../background-grid.png"
-    },
-    {
-        "name": "Portfólio Pessoal",
-        "desc": "Lorem ipsum dolor sit amet",
-        "date": "01/03/2026",
-        "techStack": [
-            { "name": "React" },
-            { "name": "TypeScript" },
-            { "name": "TailwindCSS "}
-        ],
-        "githubUrl": "https://github.com",
-        "coverImgPath": "../background-grid.png"
     }
 ]
