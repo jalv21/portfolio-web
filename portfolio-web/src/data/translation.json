@@ -1,8 +1,16 @@
 {
   "en": {
-    "translation": {}
+    "translation": {
+      "name": "João Alvaro Rodrigues",
+      "title": "SoftwareEngineer",
+      "button": "Check my portfolio"
+    }
   },
   "pt": {
-    "translation": {}
+    "translation": {
+      "name": "João Alvaro Rodrigues",
+      "title": "SoftwareEngineer",
+      "button": "Ver meu portfólio"
+    }
   }
 }

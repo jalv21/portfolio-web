@@ -1,15 +1,18 @@
-import React from "react";
 import { useTranslation } from "react-i18next";
 import { GlobeIcon } from "@radix-ui/react-icons";
 import "./LanguageSwitcher.css";
 
-const LanguageSwitcher = ({ onLanguageChange }: {onLanguageChange: any}) => {
+interface ILanguageSwitcher {
+  switcherEvent: any,
+  icon: React.ReactNode;
+}
+const LanguageSwitcher = (props: ILanguageSwitcher) => {
   const { i18n } = useTranslation();
 
   const changeLanguage = (lng: string) => {
     i18n.changeLanguage(lng);
-     if (onLanguageChange) {
-      onLanguageChange();
+     if (props.switcherEvent) {
+      props.switcherEvent();
     }
   };
 
@@ -18,7 +21,7 @@ const LanguageSwitcher = ({ onLanguageChange }: {onLanguageChange: any}) => {
 
   return (
     <div className="switcherContainer">
-      <GlobeIcon className={`icon ${isEnglish ? "active" : ""}`} />
+      {props.icon}
       <span
         className={`langText ${isPortuguese ? "active" : ""}`}
         onClick={() => changeLanguage("pt")}

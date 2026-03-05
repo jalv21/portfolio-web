@@ -5,12 +5,22 @@ import {
   Refresh,
   Translate,
 } from "@mui/icons-material";
+import LanguageSwitcher from "./LanguageSwitcher";
+import { useTranslation } from "react-i18next";
+import { useState } from "react";
 
 export default function NavigationBar({
   hasMenu,
 }: {
   hasMenu?: boolean;
 }) {
+  const { t } = useTranslation();
+  const [dummyState, setDummyState] = useState(0);
+
+  const handleLanguageChange = () => {
+    setDummyState(prev => prev + 1);
+  };
+
   const itemClassName =
     "text-white text-lg font-jetbrains hover:cursor-pointer";
   const basicFlex = "flex justify-between items center";
@@ -32,7 +42,7 @@ export default function NavigationBar({
           </span>
           <NavigationItem icon=<Refresh /> className={itemClassName} link="" />
         </div>
-        <NavigationItem icon=<Translate /> className={itemClassName} link="" />
+        <LanguageSwitcher switcherEvent={handleLanguageChange} icon=<Translate /> />
       </ul>
       {hasMenu && <InnerMenu />}
     </section>
