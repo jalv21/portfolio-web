@@ -3,14 +3,22 @@
     "translation": {
       "name": "João Alvaro Rodrigues",
       "title": "SoftwareEngineer",
-      "button": "Check my portfolio"
+      "button": "Check my portfolio",
+      "titleAboutMe": "Software Engineering Student",
+      "bio": "Front-End focused Web Developer based in Belo Horizonte, Brazil. Studying Software Engineering at PUC Minas. Lifelong Learner",
+      "currentStackHeading": "Tech Stack",
+      "studyingStackHeading": "Currently Learning"
     }
   },
   "pt": {
     "translation": {
       "name": "João Alvaro Rodrigues",
       "title": "SoftwareEngineer",
-      "button": "Ver meu portfólio"
+      "button": "Ver meu portfólio",
+      "titleAboutMe": "Estudante de Engenharia de Software",
+      "bio": "Desenvolvedor web focado em Front-End. Estudando Engenharia de Software na PUC Minas. Lifelong Learner",
+      "currentStackHeading": "Tecnologias",
+      "studyingStackHeading": "Estudando"
     }
   }
 }
