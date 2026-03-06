@@ -10,21 +10,8 @@
             { "name": "Java"},
             { "name": "Spring Boot"}
         ],
+        "avaliableOnGitHub": true,
         "githubUrl": "https://github.com",
-        "coverImgPath": "../background-grid.png"
-    },
-    {
-        "name": "Antunes & Antunes Advocacia",
-        "desc": "Lorem ipsum dolor sit amet",
-        "date": "16/01/2026",
-        "techStack": [
-            { "name": "HTML" },
-            { "name": "CSS" },
-            { "name": "JavaScript"},
-            { "name": "PHP"},
-            { "name": "WordPress"}
-        ],
-        "githubUrl": "https://github.com",
-        "coverImgPath": "../background-grid.png"
+        "coverImgPath": "../../public/background-grid.png"
     }
 ]
