@@ -1,7 +1,7 @@
 [
     {
         "name": "Feedback Fusion",
-        "desc": "Lorem ipsum dolor sit amet",
+        "desc": "Software dedicado ao feedback construtivo e aprimoramento contínuo da comunicação no ambiente de trabalho",
         "date": "13/12/2024",
         "techStack": [
             { "name": "HTML" },
@@ -11,7 +11,7 @@
             { "name": "Spring Boot"}
         ],
         "avaliableOnGitHub": true,
-        "githubUrl": "https://github.com",
-        "coverImgPath": "../../public/background-grid.png"
+        "githubUrl": "https://github.com/ICEI-PUC-Minas-PPLES-TI/plf-es-2024-2-ti2-1372100-feedbackfusion",
+        "coverImgPath": "../../public/feedbackfusion-cover.png"
     }
 ]

@@ -3,6 +3,7 @@ import NavigationBar from "../components/Navigation";
 import ContentWrapper from "../components/ContentWrapper";
 import projectsData from "../data/projects.json";
 import { GitHubLogoIcon } from "@radix-ui/react-icons";
+import { useTranslation } from "react-i18next";
 
 export default function Projects() {
     return (
@@ -79,10 +80,11 @@ const Project = (props: IProject) => {
 }
 
 const GitHubButton = ({ path }: { path: string }) => {
+    const { t } = useTranslation();
     return (
         <a href={path} className="flex gap-2 items-center p-2 w-50 bg-white text-black rounded-lg font-bold text-sm">
             <GitHubLogoIcon />
-            Ver no GitHub
+            {t("githubButton")}
         </a>
     );
 }
