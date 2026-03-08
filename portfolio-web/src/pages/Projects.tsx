@@ -3,6 +3,7 @@ import NavigationBar from "../components/Navigation";
 import ContentWrapper from "../components/ContentWrapper";
 import projectsData from "../data/projects.json";
 import { GitHubLogoIcon } from "@radix-ui/react-icons";
+import { useTranslation } from "react-i18next";
 
 export default function Projects() {
     return (
@@ -34,7 +35,7 @@ const ProjectsTimeline = () => {
 
 const ProjectContainer = ({ projects }: { projects: IProject[] }) => {
     return (
-        <div className="flex flex-col gap-3 md:flex-row md:flex-wrap">
+        <div className="w-full flex flex-col gap-3 md:flex-row md:flex-wrap">
             {projects.map((project) => (
                 <Project
                     key={project.name}
@@ -42,6 +43,7 @@ const ProjectContainer = ({ projects }: { projects: IProject[] }) => {
                     desc={project.desc}
                     date={project.date}
                     techStack={project.techStack}
+                    avaliableOnGitHub={project.avaliableOnGitHub}
                     githubUrl={project.githubUrl}
                     coverImgPath={project.coverImgPath}
                 />
@@ -55,23 +57,35 @@ interface IProject {
     desc: string;
     date: string;
     techStack: ITechStack[];
+    avaliableOnGitHub: boolean;
     githubUrl: string;
     coverImgPath: string;
 }
 const Project = (props: IProject) => {
+    let button;
+    if(props.avaliableOnGitHub)
+        button = <GitHubButton path={props.githubUrl}/>;
+    else button = '';
     return (
-        <div className="p-3 flex flex-col gap-4 bg-black/40 backdrop-blur-sm rounded-lg">
-            <img src={props.coverImgPath} alt={props.name + 'cover image'} className="h-45"></img>
+        <div className="md:max-w-1/2 p-3 flex flex-col gap-4 bg-black/40 backdrop-blur-sm rounded-lg">
+            <img src={props.coverImgPath} alt={props.name + ' cover image'} className="h-45"></img>
             <span className="flex flex-col gap-2 flex-wrap">
                 <h2 className="text-xl font-bold">{props.name}</h2>
                 <p className="text-green-200">{props.desc}</p>
             </span>
-            <TechStackBlocks stackItems={props.techStack}/>
-            <a href={props.githubUrl} className="flex gap-2 items-center p-2 w-50 bg-white text-black rounded-lg font-bold text-sm">
-                <GitHubLogoIcon />
-                Ver no GitHub
-            </a>
+            <TechStackBlocks stackItems={props.techStack} />
+            {button}
         </div>
+    );
+}
+
+const GitHubButton = ({ path }: { path: string }) => {
+    const { t } = useTranslation();
+    return (
+        <a href={path} className="flex gap-2 items-center p-2 w-50 bg-white text-black rounded-lg font-bold text-sm">
+            <GitHubLogoIcon />
+            {t("githubButton")}
+        </a>
     );
 }
 
@@ -79,7 +93,7 @@ export function TechStackBlocks({ stackItems }: { stackItems: ITechStack[] }) {
     return (
         <div className="flex gap-2 flex-wrap items-center">
             {stackItems.map((item) => (
-                <StackItem name={item.name}/>
+                <StackItem name={item.name} />
             ))}
         </div>
     );

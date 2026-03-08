@@ -1,7 +1,7 @@
 [
     {
         "name": "Feedback Fusion",
-        "desc": "Lorem ipsum dolor sit amet",
+        "desc": "Software dedicado ao feedback construtivo e aprimoramento contínuo da comunicação no ambiente de trabalho",
         "date": "13/12/2024",
         "techStack": [
             { "name": "HTML" },
@@ -10,33 +10,8 @@
             { "name": "Java"},
             { "name": "Spring Boot"}
         ],
-        "githubUrl": "https://github.com",
-        "coverImgPath": "../background-grid.png"
-    },
-    {
-        "name": "Antunes & Antunes Advocacia",
-        "desc": "Lorem ipsum dolor sit amet",
-        "date": "16/01/2026",
-        "techStack": [
-            { "name": "HTML" },
-            { "name": "CSS" },
-            { "name": "JavaScript"},
-            { "name": "PHP"},
-            { "name": "WordPress"}
-        ],
-        "githubUrl": "https://github.com",
-        "coverImgPath": "../background-grid.png"
-    },
-    {
-        "name": "Portfólio Pessoal",
-        "desc": "Lorem ipsum dolor sit amet",
-        "date": "01/03/2026",
-        "techStack": [
-            { "name": "React" },
-            { "name": "TypeScript" },
-            { "name": "TailwindCSS "}
-        ],
-        "githubUrl": "https://github.com",
-        "coverImgPath": "../background-grid.png"
+        "avaliableOnGitHub": true,
+        "githubUrl": "https://github.com/ICEI-PUC-Minas-PPLES-TI/plf-es-2024-2-ti2-1372100-feedbackfusion",
+        "coverImgPath": "../../public/feedbackfusion-cover.png"
     }
 ]
