@@ -1,0 +1,23 @@
+[
+    {
+        "title": "We Make Software 2025/1",
+        "desc": "Evento do curso de Engenharia de Software da PUC Minas, mostra de TIs e TCCs e palestras",
+        "location": "PUC Minas - Campus Lourdes",
+        "date": "25/03/2025",
+        "myRole": "Participei do grupo do TI para Processos de Negócios 'Feedback Fusion', do 2º período"
+    },
+    {
+        "title": "We Make Software 2024/2",
+        "desc": "Evento do curso de Engenharia de Software da PUC Minas, mostra de TIs e TCCs e palestras",
+        "location": "PUC Minas - Campus Lourdes",
+        "date": "18/09/2024",
+        "myRole": "Participei do grupo do TI para Aplicações Web 'Mãe Coruja', do 1º período"
+    },
+    {
+        "title": "Code Club 8ª Edição - 2023",
+        "desc": "Iniciativa do Colégio COTEMIG para o ensino de programação a alunos do ensino fundamental e médio, em tecnologias e linguagens simples de se aprender como Scratch, HTML/CSS e Python.",
+        "location": "Colégio COTEMIG - Unidade Floresta",
+        "date": "05/07/2023",
+        "myRole": "Colaborei com outros alunos do COTEMIG nas aulas do curso, dando assistência aos seus alunos em todos os conteúdos"
+    }
+]
