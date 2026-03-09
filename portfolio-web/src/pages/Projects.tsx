@@ -4,24 +4,17 @@ import ContentWrapper from "../components/ContentWrapper";
 import projectsData from "../data/projects.json";
 import { GitHubLogoIcon } from "@radix-ui/react-icons";
 import { useTranslation } from "react-i18next";
+import SectionBanner from "../components/SectionBanner";
 
 export default function Projects() {
     return (
         <Background>
             <NavigationBar hasMenu={true} />
             <ContentWrapper>
-                <ProjectsBanner />
+                <SectionBanner section="Projetos"/>
                 <ProjectsTimeline />
             </ContentWrapper>
         </Background>
-    );
-}
-
-const ProjectsBanner = () => {
-    return (
-        <div className="w-full h-35 bg-gradient-to-r from-green-200 to-purple-200 rounded-lg flex items-center justify-center">
-            <h1 className="text-3xl font-bold text-black">Projetos</h1>
-        </div>
     );
 }
 
