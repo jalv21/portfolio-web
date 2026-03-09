@@ -1,6 +1,10 @@
 {
   "en": {
     "translation": {
+      "nav_aboutme": "About Me",
+      "nav_experiences": "Experiences",
+      "nav_projects": "Projects",
+      "nav_contact": "Contact Me",
       "name": "João Alvaro Rodrigues",
       "title": "SoftwareEngineer",
       "button": "Check my portfolio",
@@ -13,6 +17,10 @@
   },
   "pt": {
     "translation": {
+      "nav_aboutme": "Sobre Mim",
+      "nav_experiences": "Experiências",
+      "nav_projects": "Projetos",
+      "nav_contact": "Contato",
       "name": "João Alvaro Rodrigues",
       "title": "SoftwareEngineer",
       "button": "Ver meu portfólio",

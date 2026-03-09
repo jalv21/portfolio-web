@@ -71,12 +71,13 @@ const InnerMenuItem = (props: { name: string; path: string }) => {
 }
 
 const InnerMenu = () => {
+  const { t } = useTranslation();
   return (
     <div className="flex flex-wrap gap-4 mt-4 md:flex-row md:gap-8">
-      <InnerMenuItem name="Sobre Mim" path="/sobremim" />
-      <InnerMenuItem name="Experiências" path="/experiencias" />
-      <InnerMenuItem name="Projetos" path="/projetos" />
-      <InnerMenuItem name="Contato" path="/contato" />
+      <InnerMenuItem name={t("nav_aboutme")} path="/sobremim" />
+      <InnerMenuItem name={t("nav_experiences")} path="/experiencias" />
+      <InnerMenuItem name={t("nav_projects")} path="/projetos" />
+      <InnerMenuItem name={t("nav_contact")} path="/contato" />
     </div>
   );
 }

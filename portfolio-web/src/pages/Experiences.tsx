@@ -3,6 +3,7 @@ import NavigationBar from "../components/Navigation";
 import ContentWrapper from "../components/ContentWrapper";
 import SectionBanner from "../components/SectionBanner";
 import experiencesData from "../data/experiences.json";
+import { LocationPin, CalendarToday } from "@mui/icons-material";
 
 export default function Experiences() {
     return (
@@ -51,14 +52,21 @@ interface IExperience {
 const Experience = (props: IExperience) => {
     return (
         <div className="md:max-w-1/2 p-3 flex flex-col gap-2 bg-black/40 backdrop-blur-sm rounded-lg">
-            <span className="flex flex-col gap-2 flex-wrap">
+            <div className="flex flex-col gap-2 flex-wrap">
                 <h2 className="text-xl font-bold">{props.title}</h2>
                 <p className="text-green-200">{props.desc}</p>
-            </span>
-            <span className="flex flex-wrap gap-2">
-                <p>{props.location}</p>
-                <p>{props.date}</p>
-            </span>
+                <p className="text-white">{props.myRole}</p>
+            </div>
+            <div className="flex flex-wrap gap-4">
+                <div className="flex items-center gap-1">
+                    <LocationPin />
+                    <p>{props.location}</p>
+                </div>
+                <div className="flex items-center gap-1">
+                    <CalendarToday />
+                    <p>{props.date}</p>
+                </div>
+            </div>
         </div>
     );
 }
